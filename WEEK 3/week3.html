@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Registration Form</title>
+
+    <style>
+        body{
+            font-family:Arial, sans-serif;
+            background:#f2f2f2;
+        }
+
+        .container{
+            width:500px;
+            margin:30px auto;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        h2{
+            text-align:center;
+            color:#007BFF;
+        }
+
+        table{
+            width:100%;
+        }
+
+        td{
+            padding:10px;
+        }
+
+        input, textarea, select{
+            width:100%;
+            padding:8px;
+            border:1px solid #ccc;
+            border-radius:5px;
+        }
+
+        input[type=radio],
+        input[type=checkbox]{
+            width:auto;
+        }
+
+        input[type=submit],
+        input[type=reset]{
+            background:#007BFF;
+            color:white;
+            border:none;
+            cursor:pointer;
+            padding:10px;
+        }
+
+        input[type=submit]:hover,
+        input[type=reset]:hover{
+            background:#0056b3;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Job Registration Form</h2>
+
+<form>
+
+<table>
+
+<tr>
+<td>Full Name</td>
+<td><input type="text" name="name"></td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td><input type="email" name="email"></td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td><input type="password" name="password"></td>
+</tr>
+
+<tr>
+<td>Mobile Number</td>
+<td><input type="tel" name="mobile"></td>
+</tr>
+
+<tr>
+<td>Date of Birth</td>
+<td><input type="date" name="dob"></td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+</td>
+</tr>
+
+<tr>
+<td>Qualification</td>
+<td>
+<select>
+<option>--Select--</option>
+<option>B.Tech</option>
+<option>B.Sc</option>
+<option>BCA</option>
+<option>MCA</option>
+<option>M.Tech</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Skills</td>
+<td>
+<input type="checkbox"> HTML
+<input type="checkbox"> CSS
+<input type="checkbox"> JavaScript
+<input type="checkbox"> Python
+</td>
+</tr>
+
+<tr>
+<td>Address</td>
+<td>
+<textarea rows="4"></textarea>
+</td>
+</tr>
+
+<tr>
+<td>Upload Resume</td>
+<td>
+<input type="file">
+</td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Register">
+<input type="reset" value="Reset">
+</td>
+</tr>
+
+</table>
+
+</form>
+
+</div>
+
+</body>
+</html>
