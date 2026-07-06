@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Loan EMI Calculator</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container{
+            width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2{
+            text-align: center;
+            color: blue;
+        }
+
+        table{
+            width: 100%;
+        }
+
+        td{
+            padding: 10px;
+        }
+
+        input{
+            width: 100%;
+            padding: 8px;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            background: green;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background: darkgreen;
+        }
+
+        #result{
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function calculateEMI()
+        {
+            var principal = parseFloat(document.getElementById("principal").value);
+            var rate = parseFloat(document.getElementById("rate").value);
+            var years = parseFloat(document.getElementById("years").value);
+
+            var monthlyRate = rate / (12 * 100);
+            var months = years * 12;
+
+            var emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, months)) /
+                      (Math.pow(1 + monthlyRate, months) - 1);
+
+            document.getElementById("result").innerHTML =
+                "Monthly EMI = ₹ " + emi.toFixed(2);
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Bank Loan EMI Calculator</h2>
+
+<table>
+
+<tr>
+<td>Loan Amount (₹)</td>
+<td><input type="number" id="principal"></td>
+</tr>
+
+<tr>
+<td>Interest Rate (%)</td>
+<td><input type="number" id="rate"></td>
+</tr>
+
+<tr>
+<td>Loan Period (Years)</td>
+<td><input type="number" id="years"></td>
+</tr>
+
+<tr>
+<td colspan="2">
+<button onclick="calculateEMI()">Calculate EMI</button>
+</td>
+</tr>
+
+</table>
+
+<div id="result"></div>
+
+</div>
+
+</body>
+</html>
