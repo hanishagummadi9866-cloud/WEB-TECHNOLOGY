@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Registration Form Validation</title>
+
+    <style>
+        body{
+            font-family:Arial;
+            background:#f2f2f2;
+        }
+
+        .container{
+            width:400px;
+            margin:40px auto;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        h2{
+            text-align:center;
+        }
+
+        input,select{
+            width:100%;
+            padding:8px;
+            margin:8px 0;
+        }
+
+        input[type=submit]{
+            background:green;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+    </style>
+
+    <script>
+        function validateForm()
+        {
+            var name=document.getElementById("name").value;
+            var email=document.getElementById("email").value;
+            var phone=document.getElementById("phone").value;
+            var password=document.getElementById("password").value;
+
+            var namePattern=/^[A-Za-z ]+$/;
+            var emailPattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            var phonePattern=/^[0-9]{10}$/;
+            var passwordPattern=/^(?=.*[A-Za-z])(?=.*\d).{6,}$/;
+
+            if(!name.match(namePattern))
+            {
+                alert("Enter Valid Name");
+                return false;
+            }
+
+            if(!email.match(emailPattern))
+            {
+                alert("Enter Valid Email");
+                return false;
+            }
+
+            if(!phone.match(phonePattern))
+            {
+                alert("Enter 10 Digit Mobile Number");
+                return false;
+            }
+
+            if(!password.match(passwordPattern))
+            {
+                alert("Password must contain letters, numbers and minimum 6 characters");
+                return false;
+            }
+
+            alert("Registration Successful");
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Job Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+<label>Name</label>
+<input type="text" id="name">
+
+<label>Email</label>
+<input type="text" id="email">
+
+<label>Mobile Number</label>
+<input type="text" id="phone">
+
+<label>Qualification</label>
+<select>
+<option>B.Tech</option>
+<option>M.Tech</option>
+<option>MCA</option>
+<option>BCA</option>
+</select>
+
+<label>Password</label>
+<input type="password" id="password">
+
+<input type="submit" value="Register">
+
+</form>
+
+</div>
+
+</body>
+</html>
